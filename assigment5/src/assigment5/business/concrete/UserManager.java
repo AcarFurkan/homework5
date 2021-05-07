@@ -18,15 +18,7 @@ public class UserManager implements UserService{
 	UserDao _userDao;
 	AuthService _authService; 
 
-	public UserManager(UserDao _userDao) {
-		super();
-		this._userDao = _userDao;
-	}
-	
-	public UserManager(AuthService _authService) {
-		super();
-		this._authService = _authService;
-	}
+	 
 	public UserManager(UserDao _userDao,AuthService _authService) {
 		super();
 		this._userDao = _userDao;
@@ -83,12 +75,10 @@ public class UserManager implements UserService{
 		 Matcher matcher = pattern.matcher(user.getEmail());
 	     boolean matchFound = matcher.find(); 
 	     
-	     if(matchFound) {
-		   System.out.println(" Regex onay verdi ");
+	     if(matchFound) { 
 		   return true;
 	     } 
-	     else {
-		  System.out.println("REGEX ONAY VERMEDI");
+	     else {  
 		  System.out.println("LUTFEN GECERLI BIR MAIL GIRINIZ");
 		  return false;
 	     }  
