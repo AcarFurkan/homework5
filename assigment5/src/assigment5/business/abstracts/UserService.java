@@ -12,5 +12,8 @@ public interface UserService {
 	void update(User user);
 	void delete(User user);
 	List<User> getAll();
-	User get(); 
+	User getById(int id); 
+	int getUserCount();
+	boolean isActive(String email);
+	void activateUser(String email);
 }

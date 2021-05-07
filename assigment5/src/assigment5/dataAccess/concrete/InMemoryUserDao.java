@@ -43,12 +43,63 @@ public class InMemoryUserDao implements UserDao{
 		// TODO Auto-generated method stub
 		return _user;
 	}
+ 
 
 	@Override
-	public User get() {
-		// TODO Auto-generated method stub
-		return _user.get(0);
+	public User getByEmail(String email) { 
+		for(int i = 0; i<_user.size();i++) {  
+			if (email.equals(_user.get(i).getEmail())) {
+				return _user.get(i);
+			} 
+		} 
+		return null;  
 	}
+
+	@Override
+	public int getUserCount() {
+		return 	_user.size();
+	}
+
+	@Override
+	public User getByEmailAndPassword(String email, String password) {
+		for(int i = 0; i<_user.size();i++) {  
+			if (email.equals(_user.get(i).getEmail()) && password.equals(_user.get(i).getPassword())) {
+				return _user.get(i);
+			} 
+		} 
+		return null;    
+	}
+
+	@Override
+	public User getById(int id) {
+		for(int i = 0; i<_user.size();i++) {  
+			if (id == _user.get(i).getId()) {
+				return _user.get(i);
+			} 
+		} 
+		return null;   
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	 
 
 }

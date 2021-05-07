@@ -9,7 +9,7 @@ public class User implements Entity {
 	String lastName;
 	String email;
 	String password;
-	boolean active;
+	boolean active; 
 	public User(int id, String firstName, String lastName, String email, String password ) {
 		super();
 		this.id = id;

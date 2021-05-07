@@ -12,5 +12,9 @@ public interface UserDao {
 	void update(User user);
 	void delete(User user);
 	List<User> getAll();
-	User get(); 
+	User getById(int id); 
+	User getByEmail(String email);
+	User getByEmailAndPassword(String email,String password);
+	int getUserCount();
+	 
 }
